@@ -13,7 +13,8 @@ def home():
 @app.get("/health")
 def health():
     return jsonify({
-        "status": "UP"
+        "status": "UP",
+        "service": "saludo-service"
     })
 
 if __name__ == "__main__":
