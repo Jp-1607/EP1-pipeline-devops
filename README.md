@@ -1,8 +1,7 @@
 # EP1 - Pipeline base DevOps
 
 ## Integrantes
-- Estudiante 1: [Tu nombre]
-- Estudiante 2: [Nombre compañero/a]
+- Estudiante 1: Juan Pedro Pavez
 
 ## Descripción del microservicio
 Se creó un microservicio simple llamado **saludo-service**, desarrollado en Python con Flask.
@@ -131,3 +130,4 @@ Todo el contenido fue revisado y adaptado por el equipo antes de su entrega.
 
 ### Reflexión individual estudiante 2
 [Escribir manualmente]
+hola
