@@ -2,7 +2,6 @@
 
 ## Integrantes
 - Estudiante 1: Juan Pavez
-- Estudiante 2: [Nombre compañero/a]
 
 ## Descripción del microservicio
 Para esta evaluación se trabajó con un microservicio simple llamado **saludo-service**, desarrollado en **Python con Flask**.  
