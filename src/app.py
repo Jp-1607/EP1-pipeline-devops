@@ -6,7 +6,7 @@ app = Flask(__name__)
 def home():
     return jsonify({
         "microservicio": "saludo-service",
-        "estado": "ok",
+        "estado": "OK",
         "mensaje": "Microservicio base funcionando"
     })
 
