@@ -7,7 +7,7 @@ def home():
     return jsonify({
         "microservicio": "saludo-service",
         "estado": "ok",
-        "mensaje": "mensaje": "Microservicio base funcionando correctamente" 
+          "mensaje": "Microservicio base funcionando correctamente" 
     })
 
 @app.get("/health")
