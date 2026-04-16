@@ -116,8 +116,6 @@ EP1-pipeline-devops/
 ├── requirements.txt
 ├── .gitignore
 ├── README.md
-├── GUIA_EXPRESS.txt
-└── TEXTOS_PULL_REQUESTS.txt
 ```
 
 ### Explicación breve de la estructura
