@@ -1,0 +1,70 @@
+GUIA EXPRESS PARA ENTREGAR HOY
+
+1. Crear cuenta o iniciar sesión en GitHub
+2. Crear repositorio nuevo llamado:
+   EP1-pipeline-devops
+
+3. Subir todos estos archivos al repositorio
+
+4. Crear la rama develop:
+   - En GitHub: Branches > New branch > develop
+   o por terminal:
+   git checkout -b develop
+   git push -u origin develop
+
+5. Crear Feature 1:
+   - Rama: feature/mensaje-bienvenida
+   - Cambia el texto "Microservicio base funcionando" por otro mensaje
+   - Haz commit y push
+   - Abre Pull Request hacia develop
+
+6. Crear Feature 2:
+   - Rama: feature/endpoint-health
+   - Ya está el endpoint /health; si quieres evidenciar mejor el cambio, puedes modificar el texto o agregar una clave extra al JSON
+   - Haz commit y push
+   - Abre Pull Request hacia develop
+
+7. Crear Hotfix:
+   - Rama: hotfix/correccion-json
+   - Corrige una clave del JSON o el nombre de un campo
+   - Haz commit y push
+   - Abre Pull Request hacia main
+
+8. Ve a la pestaña Actions y verifica que corrió el workflow
+
+9. Edita el README:
+   - Pon nombres reales
+   - Escribe conclusión propia
+   - Escribe reflexión individual propia
+
+10. Entrega el link del repositorio
+
+COMANDOS BASICOS
+
+git init
+git add .
+git commit -m "feat: version inicial del microservicio"
+git branch -M main
+git remote add origin URL_DE_TU_REPO
+git push -u origin main
+
+git checkout -b develop
+git push -u origin develop
+
+git checkout develop
+git checkout -b feature/mensaje-bienvenida
+git add .
+git commit -m "feat: actualiza mensaje de bienvenida"
+git push -u origin feature/mensaje-bienvenida
+
+git checkout develop
+git checkout -b feature/endpoint-health
+git add .
+git commit -m "feat: mejora endpoint health"
+git push -u origin feature/endpoint-health
+
+git checkout main
+git checkout -b hotfix/correccion-json
+git add .
+git commit -m "fix: corrige estructura json"
+git push -u origin hotfix/correccion-json

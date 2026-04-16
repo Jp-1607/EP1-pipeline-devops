@@ -1,0 +1,16 @@
+TEXTOS PARA LOS PULL REQUESTS
+
+PR 1
+Titulo: Feature mensaje de bienvenida
+Descripcion:
+Se actualiza el mensaje de bienvenida del microservicio para mejorar la respuesta entregada por el endpoint principal. Este cambio fue desarrollado en una rama feature y se integra a develop.
+
+PR 2
+Titulo: Feature endpoint health
+Descripcion:
+Se incorpora o mejora el endpoint de health para permitir una validacion basica del estado del microservicio. Este cambio facilita futuras automatizaciones y pruebas.
+
+PR 3
+Titulo: Hotfix correccion json
+Descripcion:
+Se corrige un detalle en la estructura de la respuesta JSON del microservicio. Debido a que corresponde a una correccion puntual, se integra mediante una rama hotfix hacia main.
