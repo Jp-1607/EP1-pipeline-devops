@@ -10,13 +10,16 @@ El presente informe detalla la implementación de mecanismos de observabilidad y
 ## 2. Infraestructura y Orquestación (IE2)
 Se realizó el despliegue del microservicio en un entorno orquestado utilizando Minikube, permitiendo la gestión de contenedores de forma automatizada.
 * **Evidencia:**
+![Evidencia de despliegue](evidencias/1.png)
 
-
+![Evidencia de despliegue](evidencias/2.png)
 
 ## 3. Observabilidad y Monitoreo (IE1, IE3)
 Se integró el stack `kube-prometheus-stack` mediante Helm, permitiendo la visualización de métricas críticas como uso de CPU y memoria a través de paneles personalizados en Grafana.
 * **Evidencia del Dashboard:**
+![Dashboard de Grafana](evidencias/5.png)
 
+![Dashboard de Grafana](evidencias/6.png)
 
 ## 4. Calidad y Cumplimiento (IE5, IE6)
 Se implementó un "Quality Gate" en SonarCloud. Gracias a la configuración `sonar.qualitygate.wait=true` en el pipeline, el sistema detiene automáticamente cualquier despliegue que no cumpla con los estándares mínimos de seguridad y calidad del código.
