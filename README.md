@@ -128,12 +128,19 @@ EP1-pipeline-devops/
 
 ---
 
-## Automatización con GitHub Actions
+##Automatización con GitHub Actions:
 
-Se configuró una acción básica de **GitHub Actions** para ejecutar validaciones automáticas en dos casos:
+Se configuró un pipeline de CI/CD completo en GitHub Actions que se ejecuta automáticamente en cada push a la rama main. El pipeline ahora integra las siguientes etapas críticas:
 
-- cuando hay `push` a la rama `develop`
-- cuando se crea un `pull request` hacia `main`
+Validación de Código: Ejecución de pruebas unitarias con pytest y generación de reportes de cobertura (coverage.xml).
+
+Seguridad: Escaneo de vulnerabilidades en dependencias mediante Snyk.
+
+Calidad: Análisis estático de código, deuda técnica y cobertura mediante SonarCloud.
+
+Empaquetado: Construcción de una imagen Docker utilizando docker compose para asegurar la portabilidad del microservicio.
+
+Este flujo asegura que ningún código llegue a producción sin haber pasado pruebas, escaneos de seguridad y análisis de calidad.
 
 ### Rol dentro de CI/CD
 GitHub Actions cumple un rol importante en los procesos de integración continua, ya que permite automatizar tareas repetitivas y validar cambios antes de integrarlos.
@@ -167,13 +174,7 @@ De todas formas, el contenido fue revisado, ajustado y validado antes de dejarlo
 ---
 
 ## Conclusión
-En esta evaluación se logró implementar una base de trabajo DevOps utilizando Git, GitHub y GitHub Actions.  
-A través del uso de ramas, commits, pull requests y una automatización básica, fue posible ordenar el desarrollo del microservicio y dejar evidencia del flujo de trabajo realizado.
-
-Además, la documentación permitió complementar el proyecto con reglas claras de versionamiento, colaboración y revisión, lo que hace que el repositorio no solo funcione, sino que también quede entendible y mantenible.
-
-En general, este trabajo ayudó a comprender de mejor manera cómo se conectan la organización del código, la colaboración en equipo y la automatización dentro de un entorno DevOps inicial.
-
+La evolución del pipeline desde una validación básica hacia un proceso completo de CI/CD que integra seguridad y contenedores fue el mayor desafío de esta etapa. Este trabajo demuestra cómo la automatización reduce el error humano y garantiza que las aplicaciones cumplan con estándares de calidad y seguridad desde el primer día.
 ---
 
 ## Reflexión individual estudiante 1
