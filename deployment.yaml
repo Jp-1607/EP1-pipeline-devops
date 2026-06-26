@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: saludo-service
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: saludo-service
+  template:
+    metadata:
+      labels:
+        app: saludo-service
+    spec:
+      containers:
+      - name: saludo-app
+        image: nginx:alpine  # Cambia 'nginx:alpine' por tu imagen si ya la tienes en DockerHub
+        ports:
+        - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: saludo-service
+spec:
+  selector:
+    app: saludo-service
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 80
+  type: NodePort
+  
