@@ -44,7 +44,7 @@ jobs:
       - name: Snyk test python dependencies
         run: snyk test --severity-threshold=high || echo "Continuar"
 
- sonar-analysis:
+sonar-analysis:
     name: SonarCloud Scan
     runs-on: ubuntu-latest
     needs: test
