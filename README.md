@@ -177,9 +177,9 @@ De todas formas, el contenido fue revisado, ajustado y validado antes de dejarlo
 La evolución del pipeline desde una validación básica hacia un proceso completo de CI/CD que integra seguridad y contenedores fue el mayor desafío de esta etapa. Este trabajo demuestra cómo la automatización reduce el error humano y garantiza que las aplicaciones cumplan con estándares de calidad y seguridad desde el primer día.
 ---
 
-## Reflexión individual estudiante 1
+## Reflexión individual estudiante 
 En lo personal, esta actividad me ayudó a entender mucho mejor cómo funciona el trabajo con ramas en GitHub. Antes lo veía como algo más teórico, pero al tener que crear ramas feature, develop y hotfix, además de hacer pull requests y merges, pude entender mejor para qué sirve cada una y cómo se aplican en un proyecto real. También me quedó más claro que documentar el repositorio no es solo un trámite, sino una forma de ordenar el trabajo y dejar todo más entendible.
 
-## Reflexión individual estudiante 2
+## Reflexión individual estudiante 
 Durante este trabajo pude comprender mejor la importancia de mantener un flujo ordenado dentro del repositorio. Aprendí que no se trata solo de subir archivos, sino de trabajar con una estructura clara, usando ramas, commits y revisiones que permitan seguir la trazabilidad del proyecto. También fue útil ver cómo una acción básica de GitHub Actions puede apoyar la validación del código y servir como primer acercamiento a la integración continua.
 
