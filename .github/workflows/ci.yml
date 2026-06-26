@@ -44,7 +44,7 @@ jobs:
       - name: Snyk test python dependencies
         run: snyk test --severity-threshold=high || echo "Continuar"
 
-  sonar-analysis:
+ sonar-analysis:
     name: SonarCloud Scan
     runs-on: ubuntu-latest
     needs: test
@@ -58,7 +58,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-
+        with:
+          args: >
+            -Dsonar.projectConfiguration=sonar-project.properties
+            
 deploy-simulation:
     name: Build Docker Image
     runs-on: ubuntu-latest
