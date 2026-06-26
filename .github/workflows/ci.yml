@@ -1,33 +1,73 @@
-name: CI Basica EP1
+name: Python CI/CD Pipeline
 
 on:
   push:
     branches:
-      - develop
-  pull_request:
-    branches:
       - main
 
 jobs:
-  validar:
+  test:
+    name: Run PyTest
     runs-on: ubuntu-latest
-
     steps:
-      - name: Descargar repositorio
+      - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Configurar Python
-        uses: actions/setup-python@v5
+      - name: Set up Python
+        uses: actions/setup-python@v4
         with:
-          python-version: '3.11'
-
-      - name: Instalar dependencias
+          python-version: '3.10'
+      - name: Install dependencies
         run: |
+          python -m pip install --upgrade pip
           pip install -r requirements.txt
+      - name: Run tests with coverage
+        run: pytest --cov=src --cov-report=xml
+      - name: Upload Coverage Report
+        uses: actions/upload-artifact@v4
+        with:
+          name: coverage-report
+          path: coverage.xml
 
-      - name: Validar sintaxis Python
+  security-scan:
+    name: Snyk Security Scan
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Install Snyk CLI
+        run: npm install -g snyk
+      - name: Authenticate Snyk CLI
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        run: snyk auth $SNYK_TOKEN
+      - name: Snyk test python dependencies
+        run: snyk test --severity-threshold=high || echo "Continuar"
+
+  sonar-analysis:
+    name: SonarCloud Scan
+    runs-on: ubuntu-latest
+    needs: test
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
+  deploy-simulation:
+    name: Build Docker Image
+    runs-on: ubuntu-latest
+    needs: [security-scan, sonar-analysis]
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Build and Test Docker Compose
         run: |
-          python -m py_compile src/app.py
-
-      - name: Mensaje final
-        run: echo "Workflow ejecutado correctamente"
+          docker-compose build
+          docker-compose up -d
+          docker ps
