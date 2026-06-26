@@ -1,4 +1,4 @@
-```yml id="p4s7xm"
+
 name: Python CI/CD Pipeline
 
 on:
@@ -91,4 +91,3 @@ jobs:
           docker compose build
           docker compose up -d
           docker ps
-```
