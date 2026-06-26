@@ -113,6 +113,7 @@ EP1-pipeline-devops/
 │       └── ci.yml
 ├── src/
 │   └── app.py
+├── sonar-project.properties
 ├── requirements.txt
 ├── .gitignore
 ├── README.md
