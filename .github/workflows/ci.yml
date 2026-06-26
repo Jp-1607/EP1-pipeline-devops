@@ -1,4 +1,4 @@
-```yml
+```yml id="p4s7xm"
 name: Python CI/CD Pipeline
 
 on:
@@ -65,18 +65,17 @@ jobs:
         with:
           fetch-depth: 0
 
-- name: SonarCloud Scan
-  uses: SonarSource/sonarqube-scan-action@v5
-  with:
-    args: >
-      -Dsonar.projectKey=Jp-1607_EP1-pipeline-devops
-      -Dsonar.organization=jp-1607
-      -Dsonar.sources=src
-      -Dsonar.python.coverage.reportPaths=coverage.xml
-  env:
-    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-```
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarqube-scan-action@v5
+        with:
+          args: >
+            -Dsonar.projectKey=Jp-1607_EP1-pipeline-devops
+            -Dsonar.organization=jp-1607
+            -Dsonar.sources=src
+            -Dsonar.python.coverage.reportPaths=coverage.xml
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
 
   deploy-simulation:
     name: Build Docker Image
